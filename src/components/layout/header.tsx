@@ -18,8 +18,7 @@ export default function Header() {
     <header className="bg-gray-900 bg-opacity-80 backdrop-blur-sm sticky top-0 z-40 w-full">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          
-          {/* Logo */}
+
           <div className="flex-shrink-0">
             <Link href="https://portalrogue.com.br/">
               <Image 
@@ -32,7 +31,6 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Navegação Principal (Desktop) */}
           <nav className="hidden md:flex flex-grow justify-center">
             <ul className="flex items-center space-x-8">
               {navLinks.map((link) => (
@@ -45,7 +43,6 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Ações e Social */}
           <div className="hidden md:flex items-center space-x-4">
             <Link href="https://portalrogue.com.br/login" className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors">
               Login
@@ -61,7 +58,6 @@ export default function Header() {
             </a>
           </div>
 
-          {/* TODO: Adicionar menu hamburger para mobile */}
           <div className="md:hidden">
             {/* Ícone do Menu Mobile aqui */}
           </div>

@@ -11,14 +11,13 @@ export default function Header() {
     { name: 'Downloads', href: 'https://portalrogue.com.br/downloads' },
     { name: 'Doações', href: 'https://portalrogue.com.br/donate' },
     { name: 'Rankings', href: 'https://portalrogue.com.br/ranking' },
-    { name: 'Marketplace', href: '/market' }, // Aponta para nossa página
+    { name: 'Marketplace', href: '/market' },
   ];
 
   return (
     <header className="bg-gray-900 bg-opacity-80 backdrop-blur-sm sticky top-0 z-40 w-full">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-
           <div className="flex-shrink-0">
             <Link href="https://portalrogue.com.br/">
               <Image 
@@ -30,7 +29,6 @@ export default function Header() {
               />
             </Link>
           </div>
-
           <nav className="hidden md:flex flex-grow justify-center">
             <ul className="flex items-center space-x-8">
               {navLinks.map((link) => (
@@ -42,7 +40,6 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-
           <div className="hidden md:flex items-center space-x-4">
             <Link href="https://portalrogue.com.br/login" className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors">
               Login
@@ -57,11 +54,9 @@ export default function Header() {
               <FaWhatsapp />
             </a>
           </div>
-
           <div className="md:hidden">
-            {/* Ícone do Menu Mobile aqui */}
+            {/* Espaço para o menu mobile no futuro */}
           </div>
-
         </div>
       </div>
     </header>

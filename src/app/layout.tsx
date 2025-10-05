@@ -1,4 +1,5 @@
-// src/app/layout.jsx
+// src/app/layout.tsx
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header"; // Importa nosso novo Header
@@ -10,15 +11,14 @@ export const metadata = {
   description: "Mercado de itens do servidor Rogue",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-br">
       <body className={`${inter.className} bg-gray-200`}>
-        <Header /> {/* Adiciona o Header aqui */}
+        <Header />
         <main>
-          {children} {/* O conteúdo da página será renderizado aqui */}
+          {children}
         </main>
-        {/* TODO: Adicionar um componente de Footer aqui no futuro */}
       </body>
     </html>
   );

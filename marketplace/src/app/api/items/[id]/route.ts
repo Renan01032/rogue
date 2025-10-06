@@ -11,8 +11,8 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
     if (!item) {
       return new NextResponse('Item not found', { status: 404 });
     }
-    return NextResponse.json(item);
-  } catch (error) {
-    return new NextResponse('Internal Server Error', { status: 500 });
-  }
+    {return NextResponse.json(
+    { error: 'Internal Server Error' }, 
+    { status: 500 }
+    );
 }

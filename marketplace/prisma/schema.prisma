@@ -1,0 +1,24 @@
+// file: prisma/schema.prisma (VERSÃO SIMPLIFICADA)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+// Modelo para os itens base do jogo. É a única tabela que precisamos.
+model Item {
+  id          String @id @default(cuid())
+  name        String @unique
+  description String @db.Text
+  rarity      String // ex: "Comum", "Raro", "Épico"
+  type        String // ex: "Arma", "Armadura", "Poção"
+  attributes  Json?  // Atributos base do item (ex: { "ataque": 15, "defesa": 5 })
+  imageUrl    String // ex: "/items/cuid_da_espada.png"
+
+  createdAt DateTime @default(now())
+}

@@ -13,9 +13,9 @@ type Item = {
 async function getItems(): Promise<Item[]> {
   // ATENÇÃO: Verifique se sua API está rodando e retornando os itens
   // A URL deve ser a URL completa da sua aplicação
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/items`, {
-    cache: 'no-store', // Para desenvolvimento, evita cache
-  });
+const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/items`, {
+  cache: 'no-store',
+});
 
   if (!res.ok) {
     // Se der erro, a página mostrará uma mensagem de erro

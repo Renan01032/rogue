@@ -21,7 +21,7 @@ export default function Header() {
               <li key={link.name}>
                 <a 
                   href={link.href} 
-                  target="_blank" // Abre em nova aba, pois são links externos ao marketplace
+                  target="_blank" 
                   rel="noopener noreferrer"
                   className="text-lg font-bold text-yellow-400 hover:text-yellow-200 transition-colors tracking-wider uppercase"
                 >
@@ -31,6 +31,11 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+
+        {/* 👇 BOTÃO NOVO ADICIONADO AQUI 👇 */}
+          <Link href="/items/new" className="bg-green-600 text-white font-bold py-2 px-4 rounded-md hover:bg-green-700 transition-colors">
+            Cadastrar Item
+          </Link>
 
         {/* Botões de Ação */}
         <div className="flex items-center gap-4">

@@ -1,8 +1,5 @@
-// file: src/components/ItemCard.tsx
 import Image from 'next/image';
 
-// Definindo os tipos para o nosso item, para ter autocomplete e segurança.
-// Idealmente, isso viria de um arquivo central como src/types/item.ts
 type ItemProps = {
   item: {
     id: string;

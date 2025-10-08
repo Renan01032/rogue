@@ -5,8 +5,8 @@ type ItemGridProps = {
   items: Item[];
 };
 
-export default function ItemGrid({ items }: ItemGridProps) {
-  return (
+export default function ItemGrid({ items = [] }: ItemGridProps) {
+    return (
     <div className="flex-1">
       {items.length === 0 ? (
         <p className="text-center text-gray-400">Nenhum item encontrado com esses filtros.</p>

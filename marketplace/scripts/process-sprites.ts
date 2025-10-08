@@ -1,4 +1,4 @@
-// file: scripts/process-sprites.ts
+/*
 import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
@@ -64,4 +64,4 @@ async function processAllSprites() {
   console.log('\nProcessamento de todas as spritesheets finalizado!');
 }
 
-processAllSprites();
+processAllSprites();*/

@@ -6,7 +6,7 @@ import path from 'path';
 // --- CONFIGURAÇÕES ---
 const SPRITES_DIR = path.join(process.cwd(), 'spritesheets');
 const OUTPUT_DIR = path.join(process.cwd(), 'public', 'items');
-const ICON_SIZE = 48; // Aparentemente seus ícones têm 48x48 pixels. Ajuste se necessário.
+const ICON_SIZE = 70; 
 // --------------------
 
 async function processAllSprites() {

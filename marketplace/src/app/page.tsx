@@ -1,46 +1,34 @@
-// file: src/app/page.tsx
-import ItemCard from '@/components/ItemCard';
+'use client'; 
 
-// Supondo que você crie este tipo em src/types/item.ts
-type Item = {
-  id: string;
-  name: string;
-  imageUrl: string;
-  // ...outros campos que você tenha
-};
+import { useState, useEffect } from 'react';
+import { Item } from '@/types/item.ts'; 
+import { mockItems } from '@/lib/mock-data'; // Importando nossos dados estáticos
+import Sidebar from '@/components/Sidebar';
+import ItemGrid from '@/components/ItemGrid';
 
-// Função que busca os dados no servidor
-async function getItems(): Promise<Item[]> {
-  // ATENÇÃO: Verifique se sua API está rodando e retornando os itens
-  // A URL deve ser a URL completa da sua aplicação
-const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/items`, {
-  cache: 'no-store',
-});
-
-  if (!res.ok) {
-    // Se der erro, a página mostrará uma mensagem de erro
-    throw new Error('Falha ao buscar os itens da API');
-  }
-
-  return res.json();
-}
-
-export default async function CatalogPage() {
-  const items = await getItems();
+export default function CatalogPage() {
+  // No futuro, os itens virão da API. Por enquanto, usamos os dados estáticos.
+  const [items, setItems] = useState<Item[]>([]);
+  
+  // O useState e useEffect são "Hooks" que só funcionam em Client Components
+  useEffect(() => {
+    // Simula o carregamento dos dados
+    setItems(mockItems);
+  }, []);
 
   return (
     <main className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-8 text-center text-white">Catálogo de Itens do Jogo "Rogue"</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center text-white">
+        Marketplace do Jogo "Rogue"
+      </h1>
       
-      {items.length === 0 ? (
-        <p className="text-center text-gray-400">Nenhum item encontrado no banco de dados.</p>
-      ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {items.map((item) => (
-            <ItemCard key={item.id} item={item} />
-          ))}
-        </div>
-      )}
+      <div className="flex flex-col md:flex-row gap-8">
+        {/* Coluna da Esquerda */}
+        <Sidebar />
+
+        {/* Coluna da Direita */}
+        <ItemGrid items={items} />
+      </div>
     </main>
   );
 }

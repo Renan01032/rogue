@@ -19,7 +19,7 @@ export default function CatalogPage() {
   return (
     <main className="container mx-auto p-8">
       <h1 className="text-4xl font-bold mb-8 text-center text-white">
-        Marketplace do Jogo "Rogue"
+        Marketplace
       </h1>
       
       <div className="flex flex-col md:flex-row gap-8">

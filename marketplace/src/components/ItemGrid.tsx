@@ -1,4 +1,4 @@
-import { Item } from './app/types/item'; 
+import { Item } from '@/types/item'; 
 import ItemCard from './ItemCard';
 
 type ItemGridProps = {
